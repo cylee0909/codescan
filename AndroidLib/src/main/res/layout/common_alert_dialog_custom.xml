@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:skin="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iknow_alert_dialog_panel_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:orientation="vertical"
+    android:background="@drawable/skin_common_alert_dialog_shape_fill_box"
+    tools:background="@drawable/skin_common_alert_dialog_shape_fill_box">
+
+    <!-- 顶部Title -->
+
+    <RelativeLayout
+        android:id="@+id/iknow_alert_dialog_title_template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="30dp">
+
+        <!-- style="?android:attr/textAppearanceLarge" -->
+        <TextView
+            android:id="@+id/iknow_alert_dialog_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="标题"
+            android:textColor="#333333"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:id="@+id/iknow_alert_dialog_title_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iknow_alert_dialog_title_right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <!-- 分割线 -->
+    <ImageView
+        android:id="@+id/common_alert_dialog_title_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="#d8d8d8"
+        android:visibility="gone" />
+
+    <!-- 内容为纯文本 -->
+    <RelativeLayout
+        android:id="@+id/iknow_alert_dialog_content_scroll_view_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ScrollView
+            android:id="@+id/iknow_alert_dialog_content_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp">
+
+            <TextView
+                android:id="@+id/iknow_alert_dialog_content_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="对话框内容"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- 自定义View -->
+    <FrameLayout
+        android:id="@+id/iknow_alert_dialog_custom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/iknow_alert_dialog_custom_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+    </FrameLayout>
+
+
+    <!-- 用于显示按钮 -->
+    <LinearLayout
+        android:id="@+id/iknow_alert_dialog_button_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <Button
+            android:id="@+id/iknow_alert_dialog_button1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/skin_common_alter_dialog_selector_nbt"
+            tools:background="@drawable/skin_common_alter_dialog_selector_nbt"
+            android:gravity="center"
+            android:textColor="#666666"
+            tools:textColor="#666666"
+            android:padding="0dp"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/iknow_alert_dialog_button2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:background="@drawable/skin_common_alter_dialog_selector_pbt"
+            tools:background="@drawable/skin_common_alter_dialog_selector_pbt"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/iknow_alert_dialog_button3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:background="@drawable/skin_common_alter_dialog_selector_pbt"
+            tools:background="@drawable/skin_common_alter_dialog_selector_pbt"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

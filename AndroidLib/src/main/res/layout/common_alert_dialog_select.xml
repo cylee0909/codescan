@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout file is used by the AlertDialog when displaying a list of items.
+    This layout file is inflated and used as the ListView to display the items.
+    Assign an ID so its state will be saved/restored.
+-->
+<ListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iknow_select_dialog_listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:cacheColorHint="@null"
+    android:listSelector="#00000000"
+    android:divider="@null"
+    android:scrollbars="vertical" />

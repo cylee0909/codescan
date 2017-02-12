@@ -1,0 +1,23 @@
+package com.cylee.codescan
+
+import android.content.Context
+import android.support.v4.view.ViewPager
+import android.util.AttributeSet
+import android.view.MotionEvent
+
+/**
+ * Created by cylee on 16/9/11.
+ */
+class SecureViewPager : ViewPager {
+    constructor(context: Context?) : super(context)
+
+    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs)
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        try {
+            return super.dispatchTouchEvent(ev)
+        } catch (e : Exception ) {
+        }
+        return false;
+    }
+}

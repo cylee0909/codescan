@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	<RelativeLayout
+		android:id="@+id/wc_title_container"
+        android:layout_height="@dimen/top_bar_height"
+        android:layout_width="match_parent">
+         <TextView 
+		    android:id="@+id/wc_back"
+		    android:layout_height="match_parent"
+		    android:layout_width="@dimen/top_bar_height"
+		    android:textSize="@dimen/top_bar_text_size"
+		    android:gravity="center"
+		    android:layout_alignParentLeft="true"
+		    android:text="@string/back"/>
+         <TextView 
+		    android:id="@+id/wc_title"
+		    android:layout_height="match_parent"
+		    android:layout_width="match_parent"
+		    android:layout_toRightOf="@+id/wc_back"
+		    android:textSize="@dimen/top_bar_title_size"
+		    android:gravity="center"
+		    android:layout_marginRight="@dimen/top_bar_height"/>
+    </RelativeLayout>
+    <com.cylee.lib.widget.webview.ProgressWebView
+        android:id="@+id/wc_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

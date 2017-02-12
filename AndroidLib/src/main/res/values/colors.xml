@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="white_bg">#fff5f5f5</color>
+    <color name="black">#ff000000</color>
+    <color name="half_transparent_black">#80000000</color>
+    <color name="half_transparent_white">#80ffffff</color>
+    <color name="blue">#ff0000ff</color>
+    <color name="gray_yellow">#fffff68f</color>
+    <color name="incall_callTypeSip">#99CE3F</color> <!-- green -->
+    <!-- start zxing -->
+    <color name="viewfinder_frame">#404040</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <!-- end zxing -->
+    <color name="actionbar_background_start">#4d4b4a</color>
+    <color name="actionbar_background_end">#42403f</color>
+</resources>

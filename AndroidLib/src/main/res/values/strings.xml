@@ -1,0 +1,9 @@
+<resources>
+    <!-- 下拉刷新控件 -->
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开刷新</string>
+    <string name="pull_to_refresh_refreshing_label">正在加载</string>
+    <string name="tip_online_internet_error">网络拥堵，请稍后重试</string>
+
+    <string name="back">返回</string>
+</resources>

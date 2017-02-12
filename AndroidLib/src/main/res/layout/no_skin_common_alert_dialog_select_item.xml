@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    This layout file is used by the AlertDialog when displaying a list of items.
+    This layout file is inflated and used as the TextView to display individual
+    items.
+-->
+<!--<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/iknow_alert_dialog_select_item_text"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="45dp"-->
+    <!--android:textSize="@dimen/common_text_size_20"-->
+    <!--android:textColor="#ff4d4d4d"-->
+    <!--android:gravity="center"-->
+    <!--android:paddingLeft="14dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:background="@drawable/common_alert_dialog_list_item_bg"-->
+    <!--android:ellipsize="marquee"/>-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:skin="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/iknow_alert_dialog_select_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+    <TextView
+        android:id="@+id/iknow_alert_dialog_select_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical|left"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:background="@drawable/common_alter_dialog_selector_nbt"/>
+    <ImageView
+        android:id="@+id/indicator_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/common_selector_gray_arrow_icon_right"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/iknow_alert_dialog_select_item_text"/>
+</RelativeLayout>

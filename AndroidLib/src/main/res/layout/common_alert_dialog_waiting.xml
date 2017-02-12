@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/iknow_waiting_dialog"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_gravity="center_vertical"
+	android:background="@drawable/common_toast_frame"
+	android:padding="14dp">
+	
+	<ProgressBar 
+		android:id="@+id/iknow_alert_dialog_waiting_ani"
+		android:layout_width="30dp"
+		android:layout_height="30dp"
+		android:gravity="center_vertical"
+		android:indeterminateDrawable="@drawable/common_alert_waiting_anim_white"
+		android:layout_marginRight="13dp"/>
+	 
+	<TextView
+		android:id="@+id/iknow_alert_dialog_waiting_message"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textSize="19sp"
+		android:textColor="#b1b1b1"
+		android:layout_gravity="center_vertical"/>
+	
+</LinearLayout>

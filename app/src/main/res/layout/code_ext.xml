@@ -1,51 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#22000000">
-
-    <TextView
-        android:id="@+id/position_code_tip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingTop="8dp"
-        android:textColor="@android:color/white"
-        tools:text="当前货位码是：1234567" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/scan_position"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/checkable_btn_bg"
-            android:text="扫货位"
-            android:textColor="#666666"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/scan_other"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/checkable_btn_bg"
-            android:text="扫货物"
-            android:textColor="#666666"
-            android:textSize="18sp" />
-    </LinearLayout>
     <ListView
         android:id="@+id/codes"
         android:layout_width="match_parent"

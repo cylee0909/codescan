@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/qcs_title_container_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/top_bg">
+
+        <TextView
+            android:id="@+id/qcs_exit"
+            android:layout_width="@dimen/top_bar_height"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/back"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/top_bar_text_size" />
+
+        <TextView
+            android:id="@+id/qcs_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/top_bar_title_size" />
+
+        <TextView
+            android:id="@+id/qcs_right_text"
+            android:layout_width="@dimen/top_bar_height"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/top_bar_text_size" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <EditText
+            android:id="@+id/code"
+            android:hint="请扫描货位码"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/goods"
+            android:hint="请扫描货物"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="确定"/>
+    </LinearLayout>
+    <include android:id="@+id/ext" layout="@layout/code_ext"/>
+</LinearLayout>

@@ -37,6 +37,8 @@ class MainActivity : BaseActivity() {
                 }
 
                 override fun OnRightButtonClick() {
+                    mCodeEdit?.setText("")
+                    mGoodsEdit?.setText("")
                     mScanCollection?.data?.clear()
                     mAdapter?.notifyDataSetChanged()
                 }
@@ -45,6 +47,9 @@ class MainActivity : BaseActivity() {
         init(bind(R.id.ext))
         confirm?.setOnClickListener {
             handleDecode()
+        }
+        bind<View>(R.id.qcs_exit).setOnClickListener {
+            finish()
         }
     }
 
@@ -105,6 +110,8 @@ class MainActivity : BaseActivity() {
                 override fun OnRightButtonClick() {
                     codeItem.count = numEdit.text.toString().toFloat()
                     mScanCollection?.data?.add(codeItem)
+                    mCodeEdit?.setText("")
+                    mGoodsEdit?.setText("")
                     mAdapter?.notifyDataSetChanged()
                 }
 

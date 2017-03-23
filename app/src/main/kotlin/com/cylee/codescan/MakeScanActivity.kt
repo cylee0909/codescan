@@ -66,7 +66,7 @@ class MakeScanActivity : BaseActivity() {
         params.topMargin = ScreenUtil.dp2px(20f)
         params.width = width
         params.height = width
-        var encodeContent = "{"+item.id+","+item.positionCode+"}"
+        var encodeContent = "{"+item.id+","+item.positionCode+","+item.count+"}"
         try {
             var bitmap = ZxingUtil.create2DCode(encodeContent, width)
             if (bitmap != null) {

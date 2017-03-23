@@ -1,11 +1,16 @@
 package com.cylee.codescan
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import cn.csnbgsh.herbarium.bind
 import com.cylee.androidlib.base.BaseActivity
+import com.cylee.androidlib.thread.Worker
+import com.cylee.androidlib.util.TaskUtils
 import com.cylee.codescan.data.ScanCodeItem
 import com.cylee.codescan.data.ScanCollection
 import com.cylee.codescan2.R
@@ -51,6 +56,33 @@ class MainActivity : BaseActivity() {
         bind<View>(R.id.qcs_exit).setOnClickListener {
             finish()
         }
+
+        var watcher = Watcher()
+        mCodeEdit?.addTextChangedListener(watcher)
+        mGoodsEdit?.addTextChangedListener(watcher)
+
+
+    }
+
+    var checkTask = object : Worker() {
+        override fun work() {
+            handleDecode()
+        }
+    }
+
+    inner class Watcher : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            if (!TextUtils.isEmpty(mCodeEdit?.text.toString()) && !TextUtils.isEmpty(mGoodsEdit?.text.toString())) {
+                TaskUtils.removePostedWork(checkTask)
+                TaskUtils.postOnMain(checkTask, 500)
+            }
+        }
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+        }
     }
 
     private fun init(v:View) {
@@ -93,8 +125,20 @@ class MainActivity : BaseActivity() {
     fun handleDecode() {
         mPositonCode = mCodeEdit?.text.toString()
         var goodsInfo = mGoodsEdit?.text.toString()
+
+        if (mPositonCode?.length ?: 0 > 20) {
+            DialogUtil.showToast("货位号长度不能大于20", false)
+            return
+        }
+
+        if (goodsInfo?.length < 20) {
+            DialogUtil.showToast("货物码长度不能小于20", false)
+            return
+        }
+
         val v = View.inflate(this, R.layout.confirm_code, null)
         val text = v.bind<TextView>(R.id.code_info_text)
+        val kuweiText = v.bind<TextView>(R.id.kuwei_text)
         val codeItem = formatCodeResult(goodsInfo)
         if (codeItem != null) {
             var exist = mScanCollection?.data?.contains(codeItem) ?: false
@@ -102,6 +146,7 @@ class MainActivity : BaseActivity() {
                 DialogUtil.showToast("数据重复", false)
                 return;
             }
+            kuweiText.text = "库位码" + mPositonCode
             text.text = "流水号：" + codeItem.id
             val numEdit = v.bind<EditText>(R.id.num_edit)
             numEdit.setText(codeItem.count.toString())
@@ -124,13 +169,21 @@ class MainActivity : BaseActivity() {
     }
 
     private fun formatCodeResult(str:String?) : ScanCodeItem? {
-        if (str != null) {
-            var result = ScanCodeItem()
-            result.id = str
-            result.count = 1f
-            result.positionCode = mPositonCode
-            result.date = ScanUtil.formatCurrent()
-            return result
+        if (str != null ) {
+            var item = str.subSequence(1, str.length -1)
+            var items = item.split(",")
+            if (items != null && items.size == 7) {
+                var result = ScanCodeItem()
+                result.id = items[6]
+                try {
+                    result.count = items[3].toFloat()
+                } catch (e:Exception) {
+                    result.count = 1f
+                }
+                result.positionCode = mPositonCode
+                result.date = ScanUtil.formatCurrent()
+                return result
+            }
         }
         return null
     }
